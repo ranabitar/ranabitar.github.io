@@ -1,1 +1,691 @@
 # Patient-Registration-Form
+<!DOCTYPE html>
+<!--
+Program name: patient-form.html
+Author: Your Name as it is in the UH roster
+Date created: 09/11/2026
+Date last edited: 09/18/2026
+Version: 1.0
+Description: Client-side patient registration form for Mare Skin Dermatology. Collects new-patient demographic, contact, medical history, and account-creation information. This page has no form action/method since it is client-side only for now
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Maré Skin | Patient Registration</title>
+
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- TOP SECTION / BANNER -->
+    <div id="top-banner">
+
+        <div class="brand-area">
+
+            <img src="image 1.png"
+                 alt="Maré Skin logo"
+                 class="clinic-logo">
+
+            <div>
+                <h1>Maré Skin</h1>
+                <p class="tagline">Dermatology &amp; Skin Care</p>
+            </div>
+
+        </div>
+
+        <div class="date-area">
+            <p>
+                Today is
+                <strong>Sunday, September 27, 2026</strong>
+            </p>
+        </div>
+
+    </div>
+
+
+    <!-- MIDDLE SECTION / FORM -->
+    <div id="main-content">
+
+        <h2>Patient Registration Form</h2>
+
+        <p class="intro">
+            Please complete the form below so we can create your patient profile.
+        </p>
+
+
+        <form action="thankyou.html">
+
+            <table class="patient-table">
+
+                <!-- NAME -->
+                <tr>
+
+                    <td>
+                        <label for="firstName">First Name *</label>
+                    </td>
+
+                    <td>
+                        <input type="text"
+                               id="firstName"
+                               name="firstName"
+                               maxlength="30"
+                               required>
+                    </td>
+
+                    <td>
+                        <label for="middleInitial">
+                            Middle Initial
+                        </label>
+                    </td>
+
+                    <td>
+                        <input type="text"
+                               id="middleInitial"
+                               name="middleInitial"
+                               maxlength="1"
+                               size="3">
+                    </td>
+
+                    <td>
+                        <label for="lastName">Last Name *</label>
+                    </td>
+
+                    <td>
+                        <input type="text"
+                               id="lastName"
+                               name="lastName"
+                               maxlength="30"
+                               required>
+                    </td>
+
+                </tr>
+
+
+                <!-- DATE OF BIRTH AND SSN -->
+                <tr>
+
+                    <td>
+                        <label for="dob">Date of Birth *</label>
+                    </td>
+
+                    <td>
+                        <input type="text"
+                               id="dob"
+                               name="dob"
+                               placeholder="MM/DD/YYYY"
+                               pattern="(0[1-9]|1[0-2])/[0-9]{2}/[0-9]{4}"
+                               title="Please enter your date as MM/DD/YYYY"
+                               required>
+                    </td>
+
+                    <td>
+                        <label for="ssn">
+                            Social Security
+                        </label>
+                    </td>
+
+                    <td colspan="3">
+                        <input type="password"
+                               id="ssn"
+                               name="ssn"
+                               minlength="9"
+                               maxlength="11"
+                               placeholder="Testing only - 9 to 11 characters">
+                    </td>
+
+                </tr>
+
+
+                <!-- ADDRESS LINE 1 -->
+                <tr>
+
+                    <td>
+                        <label for="address1">
+                            Address Line 1 *
+                        </label>
+                    </td>
+
+                    <td colspan="5">
+                        <input type="text"
+                               id="address1"
+                               name="address1"
+                               maxlength="30"
+                               class="wide-input"
+                               required>
+                    </td>
+
+                </tr>
+
+
+                <!-- ADDRESS LINE 2 -->
+                <tr>
+
+                    <td>
+                        <label for="address2">
+                            Address Line 2
+                        </label>
+                    </td>
+
+                    <td colspan="5">
+                        <input type="text"
+                               id="address2"
+                               name="address2"
+                               maxlength="30"
+                               class="wide-input">
+                    </td>
+
+                </tr>
+
+
+                <!-- CITY, STATE, ZIP -->
+                <tr>
+
+                    <td>
+                        <label for="city">City *</label>
+                    </td>
+
+                    <td>
+                        <input type="text"
+                               id="city"
+                               name="city"
+                               maxlength="30"
+                               required>
+                    </td>
+
+                    <td>
+                        <label for="state">State *</label>
+                    </td>
+
+                    <td>
+
+                        <select id="state"
+                                name="state"
+                                required>
+
+                            <option value="">Select</option>
+
+                            <option value="AL">Alabama</option>
+                            <option value="AK">Alaska</option>
+                            <option value="AZ">Arizona</option>
+                            <option value="AR">Arkansas</option>
+                            <option value="CA">California</option>
+                            <option value="CO">Colorado</option>
+                            <option value="CT">Connecticut</option>
+                            <option value="DE">Delaware</option>
+                            <option value="FL">Florida</option>
+                            <option value="GA">Georgia</option>
+                            <option value="HI">Hawaii</option>
+                            <option value="ID">Idaho</option>
+                            <option value="IL">Illinois</option>
+                            <option value="IN">Indiana</option>
+                            <option value="IA">Iowa</option>
+                            <option value="KS">Kansas</option>
+                            <option value="KY">Kentucky</option>
+                            <option value="LA">Louisiana</option>
+                            <option value="ME">Maine</option>
+                            <option value="MD">Maryland</option>
+                            <option value="MA">Massachusetts</option>
+                            <option value="MI">Michigan</option>
+                            <option value="MN">Minnesota</option>
+                            <option value="MS">Mississippi</option>
+                            <option value="MO">Missouri</option>
+                            <option value="MT">Montana</option>
+                            <option value="NE">Nebraska</option>
+                            <option value="NV">Nevada</option>
+                            <option value="NH">New Hampshire</option>
+                            <option value="NJ">New Jersey</option>
+                            <option value="NM">New Mexico</option>
+                            <option value="NY">New York</option>
+                            <option value="NC">North Carolina</option>
+                            <option value="ND">North Dakota</option>
+                            <option value="OH">Ohio</option>
+                            <option value="OK">Oklahoma</option>
+                            <option value="OR">Oregon</option>
+                            <option value="PA">Pennsylvania</option>
+                            <option value="RI">Rhode Island</option>
+                            <option value="SC">South Carolina</option>
+                            <option value="SD">South Dakota</option>
+                            <option value="TN">Tennessee</option>
+                            <option value="TX">Texas</option>
+                            <option value="UT">Utah</option>
+                            <option value="VT">Vermont</option>
+                            <option value="VA">Virginia</option>
+                            <option value="WA">Washington</option>
+                            <option value="WV">West Virginia</option>
+                            <option value="WI">Wisconsin</option>
+                            <option value="WY">Wyoming</option>
+
+                            <option value="DC">
+                                District of Columbia
+                            </option>
+
+                            <option value="PR">
+                                Puerto Rico
+                            </option>
+
+                        </select>
+
+                    </td>
+
+                    <td>
+                        <label for="zip">Zip Code *</label>
+                    </td>
+
+                    <td>
+                        <input type="text"
+                               id="zip"
+                               name="zip"
+                               inputmode="numeric"
+                               pattern="[0-9]{5,10}"
+                               minlength="5"
+                               maxlength="10"
+                               required>
+                    </td>
+
+                </tr>
+
+
+                <!-- EMAIL -->
+                <tr>
+
+                    <td>
+                        <label for="email">
+                            Email Address *
+                        </label>
+                    </td>
+
+                    <td colspan="5">
+
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               placeholder="name@domain.tld"
+                               class="wide-input"
+                               required>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- PHONE AND WEBSITE -->
+                <tr>
+
+                    <td>
+                        <label for="phone">
+                            Phone Number
+                        </label>
+                    </td>
+
+                    <td>
+
+                        <input type="tel"
+                               id="phone"
+                               name="phone"
+                               placeholder="(555) 555-5555">
+
+                    </td>
+
+                </tr>
+
+
+                <!-- SYMPTOMS -->
+                <tr>
+
+                    <td>
+                        <label for="symptoms">
+                            Current Symptoms *
+                        </label>
+                    </td>
+
+                    <td colspan="5">
+
+                        <textarea id="symptoms"
+                                  name="symptoms"
+                                  rows="3"
+                                  cols="50"
+                                  placeholder="Please describe your current symptoms, concerns, or reason for your visit."
+                                  required></textarea>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- CHECKBOXES -->
+                <tr>
+
+                    <td>
+                        Reason for Visit
+                    </td>
+
+                    <td colspan="5">
+
+                        <label class="check-option">
+                            <input type="checkbox"
+                                   name="visitReason"
+                                   value="acne">
+                            Acne
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox"
+                                   name="visitReason"
+                                   value="rash">
+                            Rash
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox"
+                                   name="visitReason"
+                                   value="moles">
+                            Moles
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox"
+                                   name="visitReason"
+                                   value="hair">
+                            Hair Loss
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox"
+                                   name="visitReason"
+                                   value="skin-check">
+                            Skin Check
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox"
+                                   name="visitReason"
+                                   value="other">
+                            Other
+                        </label>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- RADIO BUTTON SET 1 -->
+                <tr>
+
+                    <td>
+                        Gender
+                    </td>
+
+                    <td colspan="5">
+
+                        <label class="radio-option">
+                            <input type="radio"
+                                   name="gender"
+                                   value="female">
+                            Female
+                        </label>
+
+                        <label class="radio-option">
+                            <input type="radio"
+                                   name="gender"
+                                   value="male">
+                            Male
+                        </label>
+
+                        <label class="radio-option">
+                            <input type="radio"
+                                   name="gender"
+                                   value="other">
+                            Other
+                        </label>
+
+                        <label class="radio-option">
+                            <input type="radio"
+                                   name="gender"
+                                   value="prefer-not">
+                            Prefer not to say
+                        </label>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- RADIO BUTTON SET 2 -->
+                <tr>
+
+                    <td>
+                        Have you been vaccinated?
+                    </td>
+
+                    <td colspan="5">
+
+                        <label class="radio-option">
+                            <input type="radio"
+                                   name="vaccinated"
+                                   value="yes">
+                            Yes
+                        </label>
+
+                        <label class="radio-option">
+                            <input type="radio"
+                                   name="vaccinated"
+                                   value="no">
+                            No
+                        </label>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- RADIO BUTTON SET 3 -->
+                <tr>
+
+                    <td>
+                        Do you have health insurance?
+                    </td>
+
+                    <td colspan="5">
+
+                        <label class="radio-option">
+                            <input type="radio"
+                                   name="insurance"
+                                   value="yes">
+                            Yes
+                        </label>
+
+                        <label class="radio-option">
+                            <input type="radio"
+                                   name="insurance"
+                                   value="no">
+                            No
+                        </label>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- SLIDER -->
+                <tr>
+
+                    <td>
+                        <label for="healthRating">
+                            Current Health Rating
+                        </label>
+                    </td>
+
+                    <td colspan="5">
+
+                        <input type="range"
+                               id="healthRating"
+                               name="healthRating"
+                               min="1"
+                               max="10"
+                               value="5">
+
+                        <span>
+                            1 = Poor &nbsp;&nbsp;
+                            10 = Excellent
+                        </span>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- USER ID -->
+                <tr>
+
+                    <td>
+                        <label for="userID">
+                            Desired User ID *
+                        </label>
+                    </td>
+
+                    <td>
+
+                        <input type="text"
+                               id="userID"
+                               name="userID"
+                               maxlength="20"
+                               required>
+
+                    </td>
+
+                    <td>
+                        <label for="search">
+                            Search
+                        </label>
+                    </td>
+
+                    <td colspan="3">
+
+                        <input type="search"
+                               id="search"
+                               name="search"
+                               placeholder="Search Maré Skin">
+
+                    </td>
+
+                </tr>
+
+
+                <!-- PASSWORDS -->
+                <tr>
+
+                    <td>
+                        <label for="password">
+                            Password *
+                        </label>
+                    </td>
+
+                    <td>
+
+                        <input type="password"
+                               id="password"
+                               name="password"
+                               required>
+
+                    </td>
+
+                    <td>
+                        <label for="confirmPassword">
+                            Re-enter Password *
+                        </label>
+                    </td>
+
+                    <td colspan="3">
+
+                        <input type="password"
+                               id="confirmPassword"
+                               name="confirmPassword"
+                               required>
+
+                    </td>
+
+                </tr>
+
+
+                <!-- BUTTONS -->
+                <tr>
+
+                    <td colspan="6"
+                        class="button-row">
+
+                        <input type="reset"
+                               value="Reset"
+                               class="clear-button">
+                               
+                        <input type="submit"
+                               value="Submit"
+                               class="submit-button">
+
+                    </td>
+
+                </tr>
+
+            </table>
+
+        </form>
+
+    </div>
+
+
+    <!-- BOTTOM SECTION / FOOTER -->
+    <div id="footer">
+
+        <div>
+
+            <h3>Maré Skin Dermatology</h3>
+
+            <p>
+                PO BOX 18881<br>
+                Sugar Land, TX 77496
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <button type="button"
+                    class="contact-button"
+                    onclick="alert('Please contact Maré Skin through the clinic office.')">
+
+                Contact Us
+
+            </button>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="https://www.facebook.com/"
+               target="_blank">
+                Facebook
+            </a>
+
+            <a href="https://www.instagram.com/"
+               target="_blank">
+                Instagram
+            </a>
+
+            <a href="https://www.twitter.com/"
+               target="_blank">
+                X / Twitter
+            </a>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
