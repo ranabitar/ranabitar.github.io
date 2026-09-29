@@ -1,0 +1,165 @@
+<!--
+Program name: thankyou.html
+Author: Your Name as it is in the UH roster
+Date created: 09/29/2026
+Date last edited: 09/29/2026
+Version: 1.0
+Description: Thank-you page displayed after a patient submits the Maré Skin registration form.
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Maré Skin | Thank You</title>
+
+    <link href="style.css"
+          rel="stylesheet">
+
+</head>
+
+
+<body>
+
+    <!-- TOP SECTION / BANNER -->
+    <div id="top-banner">
+
+        <div class="brand-area">
+
+            <img src="image 1.png"
+                 alt="Maré Skin logo"
+                 class="clinic-logo">
+
+            <div>
+
+                <h1>Maré Skin</h1>
+
+                <p class="tagline">
+                    Dermatology &amp; Skin Care
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="date-area">
+
+    <p>Today's Date: <span id="today"></span></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- MAIN SECTION -->
+    <div id="main-content">
+
+        <h2>
+            Thank You for Your Submission
+        </h2>
+
+
+        <p class="intro">
+            Thank you for registering with Maré Skin.
+            Your patient information has been submitted successfully.
+        </p>
+
+
+        <div class="thank-you-message">
+
+            <p>
+                We appreciate you choosing Maré Skin
+                for your dermatology and skin care needs.
+            </p>
+
+            <p>
+                Our team will review your information
+                and contact you if additional information
+                is needed.
+            </p>
+
+            <a href="patient-form.html"
+               class="submit-button">
+
+                Return to Patient Form
+
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTTOM SECTION / FOOTER -->
+    <div id="footer">
+
+        <div>
+
+            <h3>
+                Maré Skin Dermatology
+            </h3>
+
+            <p>
+                PO BOX 18881<br>
+                Sugar Land, TX 77496
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <button type="button"
+                    class="contact-button"
+                    onclick="alert('Please contact Maré Skin through the clinic office.')">
+
+                Contact Us
+
+            </button>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="https://www.facebook.com/"
+               target="_blank">
+
+                Facebook
+
+            </a>
+
+
+            <a href="https://www.instagram.com/"
+               target="_blank">
+
+                Instagram
+
+            </a>
+
+
+            <a href="https://www.twitter.com/"
+               target="_blank">
+
+                X / Twitter
+
+            </a>
+
+        </div>
+
+    </div>
+  
+   <script>
+        document.getElementsById("today").innerHTML = new Date().toLocaleDateString();
+    </script>
+  
+</body>
+
+</html>
