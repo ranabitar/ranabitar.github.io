@@ -36,7 +36,9 @@ Description: Client-side patient registration form for Mare Skin Dermatology. Co
             </div>
             
         </div>
-
+        
+    <p>Today's Date: <span id="today"></span></p>    
+        
     </div>
 
     <!-- MIDDLE SECTION / FORM -->
@@ -661,8 +663,6 @@ Description: Client-side patient registration form for Mare Skin Dermatology. Co
         </div>
 
     </div>
-    
-    <p>Today's Date: <span id="today"></span></p>    
     
     <script>
         document.getElementById("today").innerHTML = new Date().toLocaleDateString();
