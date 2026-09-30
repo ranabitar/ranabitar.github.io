@@ -10,14 +10,14 @@ Description: External stylesheet for the Maré Skin patient registration form.
 body {
     margin: 0;
     background-color: #f7f1e8;
-    color: #4b392b;
+    color: #4b4035;
     font-family: "Trebuchet MS", Arial, sans-serif;
     font-size: 16px;
 }
 
 h1, h2, h3 {
     font-family: Georgia, "Times New Roman", serif;
-    color: #8c682f;
+    color: #8a6a35;
 }
 
 h1 {
@@ -39,8 +39,8 @@ h3 {
 }
 
 #top-banner {
-    background-color: #d5c2a5;
-    border-bottom: 5px solid #a98243;
+    background-color: #fffaf3;
+    border-bottom: 5px solid #b9965b;
     padding: 18px 6%;
     display: flex;
     justify-content: space-between;
@@ -63,7 +63,7 @@ h3 {
 
 .tagline {
     margin: 5px 0 0;
-    color: #654d37;
+    color: #796653;
     font-family: Georgia, "Times New Roman", serif;
     font-size: 17px;
     font-style: italic;
@@ -71,13 +71,9 @@ h3 {
 }
 
 .date-area {
-    color: #5b4633;
+    color: #6b5845;
     text-align: right;
     font-size: 15px;
-}
-
-.date-area strong {
-    color: #7d5d2d;
 }
 
 #main-content {
@@ -87,9 +83,9 @@ h3 {
     padding: 30px;
     box-sizing: border-box;
 
-    background-color: #f0e6d6;
+    background-color: #fffdf9;
 
-    border: 1px solid #c4aa82;
+    border: 1px solid #d8c7ad;
     border-radius: 15px;
 
     box-shadow: 0 6px 18px rgba(74, 55, 35, 0.15);
@@ -97,7 +93,7 @@ h3 {
 
 .intro {
     text-align: center;
-    color: #6c5845;
+    color: #6b5845;
     line-height: 1.6;
     margin-bottom: 25px;
 }
@@ -110,18 +106,18 @@ h3 {
 
 .patient-table td {
     padding: 11px;
-    border-bottom: 1px solid #d2bea1;
+    border-bottom: 1px solid #eadfce;
     vertical-align: middle;
 }
 
 .patient-table td:nth-child(odd) {
     width: 14%;
     font-weight: bold;
-    color: #62482f;
+    color: #eadfce;
 }
 
 label {
-    color: #5a4432;
+    color: #5d4b3b;
 }
 
 input[type="text"],
@@ -142,10 +138,10 @@ textarea {
 
     padding: 10px;
 
-    background-color: #e3d4bf;
-    color: #49382a;
+    background-color: #fff;
+    color: #40362e;
 
-    border: 1px solid #b4976a;
+    border: 1px solid #cbb99f;
     border-radius: 7px;
 
     font-family: "Trebuchet MS", Arial, sans-serif;
