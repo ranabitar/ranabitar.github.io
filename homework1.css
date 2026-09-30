@@ -282,8 +282,6 @@ input[type="range"] {
     text-decoration: none;
     margin-top: 10px;
 }
-
-/* Push footer down ONLY on short pages without distorting footer items */
 body.thank-you-page {
     min-height: 100vh;
     display: flex;
