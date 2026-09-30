@@ -258,5 +258,27 @@ input[type="range"] {
         text-align: center;
         justify-content: center;
     }
+
+.thank-you-message {
+    background-color: #e3d4bf;
+    border: 1px solid #b4976a;
+    border-radius: 12px;
+    padding: 30px;
+    margin: 25px auto;
+    max-width: 700px;
+    text-align: center;
+    color: #5a4432;
+    line-height: 1.7;
 }
 
+.thank-you-message p {
+    margin-bottom: 20px;
+}
+
+.thank-you-message .submit-button {
+    display: inline-block;
+    text-decoration: none;
+    margin-top: 10px;
+}
+    
+}
