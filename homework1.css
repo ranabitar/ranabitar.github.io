@@ -1,3 +1,12 @@
+/*
+Program name: style.css
+Author: Rana Bitar
+Date created: 09/11/2026
+Date last edited: 09/29/2026
+Version: 1.0
+Description: External stylesheet for the Maré Skin patient registration form.
+*/
+
 body {
     margin: 0;
     background-color: #e8ddcc;
@@ -6,9 +15,7 @@ body {
     font-size: 16px;
 }
 
-h1,
-h2,
-h3 {
+h1, h2, h3 {
     font-family: Georgia, "Times New Roman", serif;
     color: #8c682f;
 }
