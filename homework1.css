@@ -201,6 +201,7 @@ input[type="range"] {
     opacity: 0.85;
 }
 
+/* Original Footer Layout */
 #footer {
     background-color: #4b4035;
     color: #f8f0e5;
@@ -210,6 +211,7 @@ input[type="range"] {
     align-items: center;
     gap: 25px;
     flex-wrap: wrap;
+    box-sizing: border-box;
 }
 
 #footer h3 {
@@ -239,6 +241,7 @@ input[type="range"] {
     text-decoration: underline;
 }
 
+/* Original Media Query (Fixed syntax/closing brackets) */
 @media (max-width: 850px) {
     #top-banner {
         flex-direction: column;
@@ -261,6 +264,7 @@ input[type="range"] {
     }
 }
 
+/* Thank You Page Additions Only */
 .thank-you-message {
     background-color: #e3d4bf;
     border: 1px solid #b4976a;
@@ -282,13 +286,14 @@ input[type="range"] {
     text-decoration: none;
     margin-top: 10px;
 }
+
 body.thank-you-page {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
-
+}
 body.thank-you-page #footer {
     margin-top: auto;
-}
+    width: 100%;
 }
