@@ -244,7 +244,7 @@ input[type="range"] {
         flex-direction: column;
         text-align: center;
     }
-}
+
     .date-area {
         text-align: center;
     }
@@ -258,6 +258,7 @@ input[type="range"] {
         text-align: center;
         justify-content: center;
     }
+}
 
 .thank-you-message {
     background-color: #e3d4bf;
@@ -280,13 +281,15 @@ input[type="range"] {
     text-decoration: none;
     margin-top: 10px;
 }
+
+/* Push footer down ONLY on short pages without distorting footer items */
 body.thank-you-page {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
 
-body.thank-you-page #main-content {
-    flex: 1;
-}   
+body.thank-you-page #footer {
+    margin-top: auto;
+}
 }
