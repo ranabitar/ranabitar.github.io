@@ -280,5 +280,13 @@ input[type="range"] {
     text-decoration: none;
     margin-top: 10px;
 }
-    
+body.thank-you-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+body.thank-you-page #main-content {
+    flex: 1;
+}   
 }
