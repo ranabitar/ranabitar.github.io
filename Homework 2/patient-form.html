@@ -1,13 +1,13 @@
+
 <!DOCTYPE html>
 <!--
 Program name: patient-form.html
 Author: Rana Bitar
 Date created: 09/11/2026
-Date last edited: 09/30/2026
-Version: 3.0
+Date last edited: 10/22/2026
+Version: 3.1
 Description: Patient Registration Form for patients that are coming to Mare Skin for hair and skin appointments.
 -->
-<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -17,6 +17,7 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
     <title>Maré Skin | Patient Registration</title>
 
     <link rel="stylesheet" href="patient-form.css">
+    <script src="patient-form.js" defer></script>
 </head>
 
 <body>
@@ -34,11 +35,11 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                 <h1>Maré Skin</h1>
                 <p class="tagline">Dermatology & Skin Care</p>
             </div>
-            
+
         </div>
-        
-    <p>Today's Date: <span id="today"></span></p>    
-        
+
+        <p>Today's Date: <span id="today"></span></p>
+
     </div>
 
     <!-- MIDDLE SECTION / FORM -->
@@ -49,7 +50,6 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
         <p class="intro">
             Please complete the form below so we can create your patient profile.
         </p>
-
 
         <form action="thankyou.html">
 
@@ -66,7 +66,10 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                         <input type="text"
                                id="firstName"
                                name="firstName"
+                               minlength="1"
                                maxlength="30"
+                               pattern="[A-Za-z'-]{1,30}"
+                               title="Enter 1 to 30 characters. Letters, apostrophes, and hyphens only."
                                required>
                     </td>
 
@@ -81,7 +84,9 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                                id="middleInitial"
                                name="middleInitial"
                                maxlength="1"
-                               size="3">
+                               size="3"
+                               pattern="[A-Za-z]"
+                               title="Enter one letter only, or leave blank.">
                     </td>
 
                     <td>
@@ -92,12 +97,14 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                         <input type="text"
                                id="lastName"
                                name="lastName"
+                               minlength="1"
                                maxlength="30"
+                               pattern="[A-Za-z'2-5-]{1,30}"
+                               title="Enter 1 to 30 characters. Letters, apostrophes, hyphens, and numbers 2 to 5 only."
                                required>
                     </td>
 
                 </tr>
-
 
                 <!-- DATE OF BIRTH AND SSN -->
                 <tr>
@@ -107,12 +114,10 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                     </td>
 
                     <td>
-                        <input type="text"
+                        <input type="date"
                                id="dob"
                                name="dob"
-                               placeholder="MM/DD/YYYY"
-                               pattern="(0[1-9]|1[0-2])/[0-9]{2}/[0-9]{4}"
-                               title="Please enter your date as MM/DD/YYYY"
+                               title="Choose a valid birthday. Future dates and dates more than 120 years ago are not allowed."
                                required>
                     </td>
 
@@ -128,11 +133,13 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                                name="ssn"
                                minlength="11"
                                maxlength="11"
-                               placeholder="000-00-0000">
+                               pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}"
+                               placeholder="000-00-0000"
+                               autocomplete="off"
+                               title="Enter your Social Security number as 000-00-0000, or leave blank.">
                     </td>
 
                 </tr>
-
 
                 <!-- ADDRESS LINE 1 -->
                 <tr>
@@ -154,7 +161,6 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
 
                 </tr>
 
-
                 <!-- ADDRESS LINE 2 -->
                 <tr>
 
@@ -173,7 +179,6 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                     </td>
 
                 </tr>
-
 
                 <!-- CITY, STATE, ZIP -->
                 <tr>
@@ -282,7 +287,6 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
 
                 </tr>
 
-
                 <!-- EMAIL -->
                 <tr>
 
@@ -305,7 +309,6 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
 
                 </tr>
 
-
                 <!-- PHONE AND WEBSITE -->
                 <tr>
 
@@ -322,12 +325,11 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                                name="phone"
                                placeholder="(555) 555-5555"
                                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                            required>
+                               required>
 
                     </td>
 
                 </tr>
-
 
                 <!-- SYMPTOMS -->
                 <tr>
@@ -350,7 +352,6 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                     </td>
 
                 </tr>
-
 
                 <!-- CHECKBOXES -->
                 <tr>
@@ -407,7 +408,6 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
 
                 </tr>
 
-
                 <!-- RADIO BUTTON SET 1 -->
                 <tr>
 
@@ -449,7 +449,6 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
 
                 </tr>
 
-
                 <!-- RADIO BUTTON SET 2 -->
                 <tr>
 
@@ -476,7 +475,6 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                     </td>
 
                 </tr>
-
 
                 <!-- RADIO BUTTON SET 3 -->
                 <tr>
@@ -505,7 +503,6 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
 
                 </tr>
 
-
                 <!-- SLIDER -->
                 <tr>
 
@@ -533,7 +530,6 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
 
                 </tr>
 
-
                 <!-- USER ID -->
                 <tr>
 
@@ -554,7 +550,6 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                     </td>
 
                 </tr>
-
 
                 <!-- PASSWORDS -->
                 <tr>
@@ -591,7 +586,6 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
 
                 </tr>
 
-
                 <!-- BUTTONS -->
                 <tr>
 
@@ -601,7 +595,7 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                         <input type="reset"
                                value="Reset"
                                class="clear-button">
-                               
+
                         <input type="submit"
                                value="Submit"
                                class="submit-button">
@@ -615,7 +609,6 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
         </form>
 
     </div>
-
 
     <!-- BOTTOM SECTION / FOOTER -->
     <div id="footer">
@@ -631,7 +624,6 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
 
         </div>
 
-
         <div>
 
             <button type="button"
@@ -643,7 +635,6 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
             </button>
 
         </div>
-
 
         <div class="footer-links">
 
@@ -665,11 +656,7 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
         </div>
 
     </div>
-    
-    <script>
-        document.getElementById("today").innerHTML = new Date().toLocaleDateString();
-    </script>
-        
+
 </body>
 
 </html>
