@@ -142,44 +142,46 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                 </tr>
 
                 <!-- ADDRESS LINE 1 -->
-                <tr>
+<tr>
 
-                    <td>
-                        <label for="address1">
-                            Address Line 1 *
-                        </label>
-                    </td>
+    <td>
+        <label for="address1">
+            Address Line 1 *
+        </label>
+    </td>
 
-                    <td colspan="5">
-                        <input type="text"
-                               id="address1"
-                               name="address1"
-                               maxlength="30"
-                               class="wide-input"
-                               required>
-                    </td>
+    <td colspan="5">
+        <input type="text"
+               id="address1"
+               name="address1"
+               minlength="2"
+               maxlength="30"
+               class="wide-input"
+               title="Enter your street address using 2 to 30 characters."
+               required>
+    </td>
 
-                </tr>
-
+</tr>
                 <!-- ADDRESS LINE 2 -->
-                <tr>
+<tr>
 
-                    <td>
-                        <label for="address2">
-                            Address Line 2
-                        </label>
-                    </td>
+    <td>
+        <label for="address2">
+            Address Line 2
+        </label>
+    </td>
 
-                    <td colspan="5">
-                        <input type="text"
-                               id="address2"
-                               name="address2"
-                               maxlength="30"
-                               class="wide-input">
-                    </td>
+    <td colspan="5">
+        <input type="text"
+               id="address2"
+               name="address2"
+               minlength="2"
+               maxlength="30"
+               class="wide-input"
+               title="Optional: Enter an apartment, suite, or unit number using 2 to 30 characters.">
+    </td>
 
-                </tr>
-
+</tr>
                 <!-- CITY, STATE, ZIP -->
                 <tr>
 
