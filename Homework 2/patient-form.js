@@ -1,3 +1,9 @@
+/*
+Program name: patient-form.js
+Author: Rana Bitar
+Description: JavaScript functions for Maré Skin patient registration.
+*/
+
 function truncateZip() {
     const zip = document.getElementById("zip");
 
@@ -19,3 +25,13 @@ function updateHealthRating() {
 
     output.textContent = slider.value;
 }
+
+
+// Convert the desired User ID to lowercase
+function convertUserID() {
+    const userID = document.getElementById("userID");
+
+    userID.value = userID.value.toLowerCase();
+}
+
+
