@@ -1,6 +1,9 @@
 /*
 Program name: patient-form.js
 Author: Rana Bitar
+Date created: 10/22/2026
+Date last edited: 10/22/2026
+Version: 1.0
 Description: JavaScript functions for Maré Skin patient registration.
 */
 
