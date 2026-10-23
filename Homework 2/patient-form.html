@@ -288,49 +288,52 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                 </tr>
 
                 <!-- EMAIL -->
-                <tr>
+<tr>
 
-                    <td>
-                        <label for="email">
-                            Email Address *
-                        </label>
-                    </td>
+    <td>
+        <label for="email">
+            Email Address *
+        </label>
+    </td>
 
-                    <td colspan="5">
+    <td colspan="5">
 
-                        <input type="email"
-                               id="email"
-                               name="email"
-                               placeholder="name@domain.tld"
-                               class="wide-input"
-                               required>
+        <input type="email"
+               id="email"
+               name="email"
+               placeholder="name@domain.tld"
+               pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)+"
+               title="Enter a valid email address in the format name@domain.tld"
+               class="wide-input"
+               required>
 
-                    </td>
+    </td>
 
-                </tr>
+</tr>
+                <!-- PHONE -->
+<tr>
 
-                <!-- PHONE AND WEBSITE -->
-                <tr>
+    <td>
+        <label for="phone">
+            Phone Number *
+        </label>
+    </td>
 
-                    <td>
-                        <label for="phone">
-                            Phone Number
-                        </label>
-                    </td>
+    <td>
 
-                    <td>
+        <input type="tel"
+               id="phone"
+               name="phone"
+               placeholder="000-000-0000"
+               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+               minlength="12"
+               maxlength="12"
+               title="Enter your phone number in the format 000-000-0000"
+               required>
 
-                        <input type="tel"
-                               id="phone"
-                               name="phone"
-                               placeholder="(555) 555-5555"
-                               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                               required>
+    </td>
 
-                    </td>
-
-                </tr>
-
+</tr>
                 <!-- SYMPTOMS -->
                 <tr>
 
