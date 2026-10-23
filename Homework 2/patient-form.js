@@ -10,3 +10,12 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("zip")
         .addEventListener("change", truncateZip);
 });
+
+
+// Display the current health rating as the slider moves
+function updateHealthRating() {
+    const slider = document.getElementById("healthRating");
+    const output = document.getElementById("ratingValue");
+
+    output.textContent = slider.value;
+}
