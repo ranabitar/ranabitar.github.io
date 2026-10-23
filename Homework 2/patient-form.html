@@ -568,39 +568,52 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
 
 </tr>
                 <!-- PASSWORDS -->
-                <tr>
+<tr>
 
-                    <td>
-                        <label for="password">
-                            Password *
-                        </label>
-                    </td>
+    <td>
+        <label for="password">
+            Password *
+        </label>
+    </td>
 
-                    <td>
+    <td>
 
-                        <input type="password"
-                               id="password"
-                               name="password"
-                               required>
+        <input type="password"
+               id="password"
+               name="password"
+               minlength="8"
+               maxlength="30"
+               pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#%^&amp;*()_+=.,`~&lt;&gt;/\\-])[A-Za-z0-9!@#%^&amp;*()_+=.,`~&lt;&gt;/\\-]{8,30}"
+               title="Password must be 8 to 30 characters and contain an uppercase letter, lowercase letter, number, and special character. No quotes allowed."
+               oninput="validatePasswords()"
+               required>
 
-                    </td>
+        <span id="passwordError" class="error-message"></span>
 
-                    <td>
-                        <label for="confirmPassword">
-                            Re-enter Password *
-                        </label>
-                    </td>
+    </td>
 
-                    <td colspan="3">
+    <td>
+        <label for="confirmPassword">
+            Re-enter Password *
+        </label>
+    </td>
 
-                        <input type="password"
-                               id="confirmPassword"
-                               name="confirmPassword"
-                               required>
+    <td colspan="3">
 
-                    </td>
+        <input type="password"
+               id="confirmPassword"
+               name="confirmPassword"
+               minlength="8"
+               maxlength="30"
+               title="Re-enter the same password."
+               oninput="validatePasswords()"
+               required>
 
-                </tr>
+        <span id="confirmPasswordError" class="error-message"></span>
+
+    </td>
+
+</tr>
 
                 <!-- BUTTONS -->
                 <tr>
