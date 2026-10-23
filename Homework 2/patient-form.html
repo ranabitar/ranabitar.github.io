@@ -341,27 +341,26 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
 
 </tr>
                 <!-- SYMPTOMS -->
-                <tr>
+<tr>
 
-                    <td>
-                        <label for="symptoms">
-                            Current Symptoms *
-                        </label>
-                    </td>
+    <td>
+        <label for="symptoms">
+            Current Symptoms
+        </label>
+    </td>
 
-                    <td colspan="5">
+    <td colspan="5">
 
-                        <textarea id="symptoms"
-                                  name="symptoms"
-                                  rows="3"
-                                  cols="50"
-                                  placeholder="Please describe your current symptoms, concerns, or reason for your visit."
-                                  required></textarea>
+        <textarea id="symptoms"
+                  name="symptoms"
+                  rows="3"
+                  cols="50"
+                  placeholder="Please describe your current symptoms, concerns, or reason for your visit."
+                  title="Optional: Describe any symptoms, concerns, or reasons for your visit."></textarea>
 
-                    </td>
+    </td>
 
-                </tr>
-
+</tr>
                 <!-- CHECKBOXES -->
                 <tr>
 
@@ -543,27 +542,31 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
     </td>
 
 </tr>
+                
                 <!-- USER ID -->
-                <tr>
+<tr>
 
-                    <td>
-                        <label for="userID">
-                            Desired User ID *
-                        </label>
-                    </td>
+    <td>
+        <label for="userID">
+            Desired User ID *
+        </label>
+    </td>
 
-                    <td>
+    <td>
 
-                        <input type="text"
-                               id="userID"
-                               name="userID"
-                               maxlength="20"
-                               required>
+        <input type="text"
+               id="userID"
+               name="userID"
+               minlength="5"
+               maxlength="30"
+               pattern="[A-Za-z][A-Za-z0-9_-]{4,29}"
+               title="User ID must be 5 to 30 characters, start with a letter, and contain only letters, numbers, underscores, or dashes. No spaces."
+               oninput="convertUserID()"
+               required>
 
-                    </td>
+    </td>
 
-                </tr>
-
+</tr>
                 <!-- PASSWORDS -->
                 <tr>
 
