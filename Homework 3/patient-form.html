@@ -7,11 +7,13 @@ Date last edited: 10/22/2026
 Version: 3.1
 Description: Patient Registration Form for patients that are coming to Mare Skin for hair and skin appointments.
 -->
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
 
     <title>Maré Skin | Patient Registration</title>
 
@@ -32,7 +34,9 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
 
             <div>
                 <h1>Maré Skin</h1>
-                <p class="tagline">Dermatology & Skin Care</p>
+                <p class="tagline">
+                    Dermatology & Skin Care
+                </p>
             </div>
 
         </div>
@@ -41,16 +45,22 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
 
     </div>
 
-    <!-- MIDDLE SECTION / FORM -->
+
+    <!-- MAIN SECTION -->
     <div id="main-content">
 
         <h2>Patient Registration Form</h2>
 
         <p class="intro">
-            Please complete the form below so we can create your patient profile.
+            Please complete the form below so we can
+            create your patient profile.
+            Fields marked with * are required.
         </p>
 
-        <form action="thankyou.html">
+        <form id="patientForm"
+              action="thankyou.html"
+              method="get"
+              novalidate>
 
             <table class="patient-table">
 
@@ -58,7 +68,9 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                 <tr>
 
                     <td>
-                        <label for="firstName">First Name *</label>
+                        <label for="firstName">
+                            First Name *
+                        </label>
                     </td>
 
                     <td>
@@ -68,8 +80,14 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                                minlength="1"
                                maxlength="30"
                                pattern="[A-Za-z'-]{1,30}"
+                               placeholder="First name"
                                title="Enter 1 to 30 characters. Letters, apostrophes, and hyphens only."
+                               aria-describedby="firstNameError"
                                required>
+
+                        <span id="firstNameError"
+                              class="error-message"
+                              aria-live="polite"></span>
                     </td>
 
                     <td>
@@ -85,11 +103,18 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                                maxlength="1"
                                size="3"
                                pattern="[A-Za-z]"
-                               title="Enter one letter only, or leave blank.">
+                               title="Enter one letter only, or leave blank."
+                               aria-describedby="middleInitialError">
+
+                        <span id="middleInitialError"
+                              class="error-message"
+                              aria-live="polite"></span>
                     </td>
 
                     <td>
-                        <label for="lastName">Last Name *</label>
+                        <label for="lastName">
+                            Last Name *
+                        </label>
                     </td>
 
                     <td>
@@ -98,119 +123,167 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                                name="lastName"
                                minlength="1"
                                maxlength="30"
-                               pattern="[A-Za-z'2-5-]{1,30}"
-                               title="Enter 1 to 30 characters. Letters, apostrophes, hyphens, and numbers 2 to 5 only."
+                               pattern="[A-Za-z'-]{1,30}"
+                               placeholder="Last name"
+                               title="Enter 1 to 30 characters. Letters, apostrophes, and hyphens only."
+                               aria-describedby="lastNameError"
                                required>
+
+                        <span id="lastNameError"
+                              class="error-message"
+                              aria-live="polite"></span>
                     </td>
 
                 </tr>
 
-                <!-- DATE OF BIRTH AND SSN -->
+
+                <!-- DATE OF BIRTH AND PATIENT ID -->
                 <tr>
 
                     <td>
-                        <label for="dob">Date of Birth *</label>
+                        <label for="dob">
+                            Date of Birth *
+                        </label>
                     </td>
 
                     <td>
                         <input type="date"
                                id="dob"
                                name="dob"
-                               title="Choose a valid birthday. Future dates and dates more than 120 years ago are not allowed."
+                               title="Select a valid birthday. Future dates and dates more than 120 years ago are not allowed."
+                               aria-describedby="dobError"
                                required>
+
+                        <span id="dobError"
+                              class="error-message"
+                              aria-live="polite"></span>
                     </td>
 
                     <td>
                         <label for="ssn">
-                            Social Security
+                            Patient ID
                         </label>
                     </td>
 
                     <td colspan="3">
-                        <input type="password"
+                        <input type="text"
                                id="ssn"
                                name="ssn"
+                               inputmode="numeric"
                                minlength="11"
                                maxlength="11"
                                pattern="[0-9]{3}-[0-9]{2}-[0-9]{4}"
                                placeholder="000-00-0000"
                                autocomplete="off"
-                               title="Enter your Social Security number as 000-00-0000, or leave blank.">
+                               title="Optional: Enter a fictional 9-digit patient ID. Do not enter a real Social Security number."
+                               aria-describedby="ssnError">
+
+                        <span id="ssnError"
+                              class="error-message"
+                              aria-live="polite"></span>
                     </td>
 
                 </tr>
 
+
                 <!-- ADDRESS LINE 1 -->
-<tr>
+                <tr>
 
-    <td>
-        <label for="address1">
-            Address Line 1 *
-        </label>
-    </td>
+                    <td>
+                        <label for="address1">
+                            Address Line 1 *
+                        </label>
+                    </td>
 
-    <td colspan="5">
-        <input type="text"
-               id="address1"
-               name="address1"
-               minlength="2"
-               maxlength="30"
-               class="wide-input"
-               title="Enter your street address using 2 to 30 characters."
-               required>
-    </td>
+                    <td colspan="5">
+                        <input type="text"
+                               id="address1"
+                               name="address1"
+                               minlength="2"
+                               maxlength="30"
+                               class="wide-input"
+                               placeholder="Street address"
+                               title="Enter a street address using 2 to 30 characters."
+                               aria-describedby="address1Error"
+                               required>
 
-</tr>
+                        <span id="address1Error"
+                              class="error-message"
+                              aria-live="polite"></span>
+                    </td>
+
+                </tr>
+
+
                 <!-- ADDRESS LINE 2 -->
-<tr>
+                <tr>
 
-    <td>
-        <label for="address2">
-            Address Line 2
-        </label>
-    </td>
+                    <td>
+                        <label for="address2">
+                            Address Line 2
+                        </label>
+                    </td>
 
-    <td colspan="5">
-        <input type="text"
-               id="address2"
-               name="address2"
-               minlength="2"
-               maxlength="30"
-               class="wide-input"
-               title="Optional: Enter an apartment, suite, or unit number using 2 to 30 characters.">
-    </td>
+                    <td colspan="5">
+                        <input type="text"
+                               id="address2"
+                               name="address2"
+                               minlength="2"
+                               maxlength="30"
+                               class="wide-input"
+                               placeholder="Apartment, suite, or unit"
+                               title="Optional: Enter 2 to 30 characters."
+                               aria-describedby="address2Error">
 
-</tr>
+                        <span id="address2Error"
+                              class="error-message"
+                              aria-live="polite"></span>
+                    </td>
+
+                </tr>
+
+
                 <!-- CITY, STATE, ZIP -->
-<tr>
+                <tr>
 
-    <td>
-        <label for="city">City *</label>
-    </td>
+                    <td>
+                        <label for="city">
+                            City *
+                        </label>
+                    </td>
 
-    <td>
-        <input type="text"
-               id="city"
-               name="city"
-               minlength="2"
-               maxlength="30"
-               title="Enter a city name using 2 to 30 characters."
-               required>
-    </td>
+                    <td>
+                        <input type="text"
+                               id="city"
+                               name="city"
+                               minlength="2"
+                               maxlength="30"
+                               placeholder="City"
+                               title="Enter 2 to 30 letters. Spaces, apostrophes, and hyphens are allowed."
+                               aria-describedby="cityError"
+                               required>
 
-    <td>
-        <label for="state">State *</label>
-    </td>
+                        <span id="cityError"
+                              class="error-message"
+                              aria-live="polite"></span>
+                    </td>
 
-    <td>
-        <select id="state"
-                name="state"
-                title="Please select your state."
-                required>
+                    <td>
+                        <label for="state">
+                            State *
+                        </label>
+                    </td>
 
-            <option value="" selected disabled>
-                Select State
-            </option>
+                    <td>
+                        <select id="state"
+                                name="state"
+                                title="Select your state, DC, or Puerto Rico."
+                                aria-describedby="stateError"
+                                required>
+
+                            <option value="" selected disabled>
+                                Select State
+                            </option>
 
                             <option value="AL">Alabama</option>
                             <option value="AK">Alaska</option>
@@ -262,105 +335,127 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                             <option value="WV">West Virginia</option>
                             <option value="WI">Wisconsin</option>
                             <option value="WY">Wyoming</option>
-
-                            <option value="DC">
-                                District of Columbia
-                            </option>
-
-                            <option value="PR">
-                                Puerto Rico
-                            </option>
+                            <option value="DC">District of Columbia</option>
+                            <option value="PR">Puerto Rico</option>
 
                         </select>
 
+                        <span id="stateError"
+                              class="error-message"
+                              aria-live="polite"></span>
                     </td>
 
-    <td>
-        <label for="zip">Zip Code *</label>
-    </td>
+                    <td>
+                        <label for="zip">
+                            ZIP Code *
+                        </label>
+                    </td>
 
-    <td>
-        <input type="text"
-               id="zip"
-               name="zip"
-               inputmode="numeric"
-               pattern="[0-9]{5}(-[0-9]{4})?"
-               minlength="5"
-               maxlength="10"
-               placeholder="77002 or 77002-1234"
-               title="Enter a 5-digit ZIP code or ZIP+4 using the format 77002-1234."
-               required>
-    </td>
+                    <td>
+                        <input type="text"
+                               id="zip"
+                               name="zip"
+                               inputmode="numeric"
+                               minlength="5"
+                               maxlength="5"
+                               pattern="[0-9]{5}"
+                               placeholder="77002"
+                               title="Enter exactly 5 digits."
+                               aria-describedby="zipError"
+                               required>
 
-</tr>
+                        <span id="zipError"
+                              class="error-message"
+                              aria-live="polite"></span>
+                    </td>
+
+                </tr>
+
+
                 <!-- EMAIL -->
-<tr>
+                <tr>
 
-    <td>
-        <label for="email">
-            Email Address *
-        </label>
-    </td>
+                    <td>
+                        <label for="email">
+                            Email Address *
+                        </label>
+                    </td>
 
-    <td colspan="5">
+                    <td colspan="5">
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               placeholder="name@domain.tld"
+                               pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)+"
+                               title="Enter a valid email in the format name@domain.tld."
+                               class="wide-input"
+                               aria-describedby="emailError"
+                               required>
 
-        <input type="email"
-               id="email"
-               name="email"
-               placeholder="name@domain.tld"
-               pattern="[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\.[A-Za-z0-9-]+)+"
-               title="Enter a valid email address in the format name@domain.tld"
-               class="wide-input"
-               required>
+                        <span id="emailError"
+                              class="error-message"
+                              aria-live="polite"></span>
+                    </td>
 
-    </td>
+                </tr>
 
-</tr>
+
                 <!-- PHONE -->
-<tr>
+                <tr>
 
-    <td>
-        <label for="phone">
-            Phone Number *
-        </label>
-    </td>
+                    <td>
+                        <label for="phone">
+                            Phone Number *
+                        </label>
+                    </td>
 
-    <td>
+                    <td colspan="5">
+                        <input type="tel"
+                               id="phone"
+                               name="phone"
+                               placeholder="000-000-0000"
+                               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                               minlength="12"
+                               maxlength="12"
+                               title="Enter 10 digits in the format 000-000-0000."
+                               aria-describedby="phoneError"
+                               required>
 
-        <input type="tel"
-               id="phone"
-               name="phone"
-               placeholder="000-000-0000"
-               pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-               minlength="12"
-               maxlength="12"
-               title="Enter your phone number in the format 000-000-0000"
-               required>
+                        <span id="phoneError"
+                              class="error-message"
+                              aria-live="polite"></span>
+                    </td>
 
-    </td>
+                </tr>
 
-</tr>
+
                 <!-- SYMPTOMS -->
-<tr>
+                <tr>
 
-    <td>
-        <label for="symptoms">
-            Current Symptoms
-        </label>
-    </td>
+                    <td>
+                        <label for="symptoms">
+                            Current Symptoms
+                        </label>
+                    </td>
 
-    <td colspan="5">
+                    <td colspan="5">
+                        <textarea id="symptoms"
+                                  name="symptoms"
+                                  rows="3"
+                                  cols="50"
+                                  maxlength="500"
+                                  placeholder="Please describe your current symptoms, concerns, or reason for your visit."
+                                  title="Optional: Enter up to 500 characters. HTML tags are not allowed."
+                                  aria-describedby="symptomsError"></textarea>
 
-        <textarea id="symptoms"
-                  name="symptoms"
-                  rows="3"
-                  cols="50"
-                  placeholder="Please describe your current symptoms, concerns, or reason for your visit."
-                  title="Optional: Describe any symptoms, concerns, or reasons for your visit."></textarea>
+                        <span id="symptomsError"
+                              class="error-message"
+                              aria-live="polite"></span>
+                    </td>
 
-    </td>
+                </tr>
 
-</tr>
+
                 <!-- CHECKBOXES -->
                 <tr>
 
@@ -412,11 +507,16 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                             Other
                         </label>
 
+                        <span id="visitReasonError"
+                              class="error-message"
+                              aria-live="polite"></span>
+
                     </td>
 
                 </tr>
 
-                <!-- RADIO BUTTON SET 1 -->
+
+                <!-- RADIO BUTTONS: GENDER -->
                 <tr>
 
                     <td>
@@ -453,11 +553,16 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                             Prefer not to say
                         </label>
 
+                        <span id="genderError"
+                              class="error-message"
+                              aria-live="polite"></span>
+
                     </td>
 
                 </tr>
 
-                <!-- RADIO BUTTON SET 2 -->
+
+                <!-- RADIO BUTTONS: VACCINATION -->
                 <tr>
 
                     <td>
@@ -480,11 +585,16 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                             No
                         </label>
 
+                        <span id="vaccinatedError"
+                              class="error-message"
+                              aria-live="polite"></span>
+
                     </td>
 
                 </tr>
 
-                <!-- RADIO BUTTON SET 3 -->
+
+                <!-- RADIO BUTTONS: INSURANCE -->
                 <tr>
 
                     <td>
@@ -507,127 +617,179 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
                             No
                         </label>
 
+                        <span id="insuranceError"
+                              class="error-message"
+                              aria-live="polite"></span>
+
                     </td>
 
                 </tr>
 
-                <!-- SLIDER -->
-<tr>
 
-    <td>
-        <label for="healthRating">
-            Current Health Rating
-        </label>
-    </td>
+                <!-- HEALTH RATING SLIDER -->
+                <tr>
 
-    <td colspan="5">
+                    <td>
+                        <label for="healthRating">
+                            Current Health Rating
+                        </label>
+                    </td>
 
-        <input type="range"
-               id="healthRating"
-               name="healthRating"
-               min="0"
-               max="10"
-               step="1"
-               value="0"
-               oninput="updateHealthRating()"
-               title="Move the slider to rate your current health from 0 to 10.">
+                    <td colspan="5">
 
-        <span id="ratingValue">0</span> / 10
+                        <input type="range"
+                               id="healthRating"
+                               name="healthRating"
+                               min="0"
+                               max="10"
+                               step="1"
+                               value="0"
+                               title="Move the slider to rate your current health from 0 to 10."
+                               aria-describedby="healthRatingError">
 
-        <div class="slider-labels">
-            <span>0 = Poor</span>
-            <span>10 = Excellent</span>
-        </div>
+                        <span id="ratingValue">0</span> / 10
 
-    </td>
+                        <div class="slider-labels">
+                            <span>0 = Poor</span>
+                            <span>10 = Excellent</span>
+                        </div>
 
-</tr>
-                
+                        <span id="healthRatingError"
+                              class="error-message"
+                              aria-live="polite"></span>
+
+                    </td>
+
+                </tr>
+
+
                 <!-- USER ID -->
-<tr>
+                <tr>
 
-    <td>
-        <label for="userID">
-            Desired User ID *
-        </label>
-    </td>
+                    <td>
+                        <label for="userID">
+                            Desired User ID *
+                        </label>
+                    </td>
 
-    <td>
+                    <td colspan="5">
 
-        <input type="text"
-               id="userID"
-               name="userID"
-               minlength="5"
-               maxlength="30"
-               pattern="[A-Za-z][A-Za-z0-9_-]{4,29}"
-               title="User ID must be 5 to 30 characters, start with a letter, and contain only letters, numbers, underscores, or dashes. No spaces."
-               oninput="convertUserID()"
-               required>
+                        <input type="text"
+                               id="userID"
+                               name="userID"
+                               minlength="5"
+                               maxlength="20"
+                               pattern="[A-Za-z][A-Za-z0-9_-]{4,19}"
+                               placeholder="Choose a User ID"
+                               autocomplete="username"
+                               title="Must be 5 to 20 characters, start with a letter, and contain only letters, numbers, underscores, or dashes."
+                               aria-describedby="userIDError"
+                               required>
 
-    </td>
+                        <span id="userIDError"
+                              class="error-message"
+                              aria-live="polite"></span>
 
-</tr>
+                    </td>
+
+                </tr>
+
+
                 <!-- PASSWORDS -->
-<tr>
+                <tr>
 
-    <td>
-        <label for="password">
-            Password *
-        </label>
-    </td>
+                    <td>
+                        <label for="password">
+                            Password *
+                        </label>
+                    </td>
 
-    <td>
+                    <td>
 
-        <input type="password"
-               id="password"
-               name="password"
-               minlength="8"
-               maxlength="30"
-               pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#%^&amp;*()_+=.,`~&lt;&gt;/\\-])[A-Za-z0-9!@#%^&amp;*()_+=.,`~&lt;&gt;/\\-]{8,30}"
-               title="Password must be 8 to 30 characters and contain an uppercase letter, lowercase letter, number, and special character. No quotes allowed."
-               oninput="validatePasswords()"
-               required>
+                        <input type="password"
+                               id="password"
+                               name="password"
+                               minlength="8"
+                               maxlength="30"
+                               pattern="(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[!@#%^&amp;*()_+=.,`~&lt;&gt;/\\-])[A-Za-z0-9!@#%^&amp;*()_+=.,`~&lt;&gt;/\\-]{8,30}"
+                               placeholder="Create a password"
+                               autocomplete="new-password"
+                               title="Use 8 to 30 characters with uppercase, lowercase, a number, and a special character. Spaces and quotes are not allowed."
+                               aria-describedby="passwordError"
+                               required>
 
-        <span id="passwordError" class="error-message"></span>
+                        <span id="passwordError"
+                              class="error-message"
+                              aria-live="polite"></span>
 
-    </td>
+                    </td>
 
-    <td>
-        <label for="confirmPassword">
-            Re-enter Password *
-        </label>
-    </td>
+                    <td>
+                        <label for="confirmPassword">
+                            Re-enter Password *
+                        </label>
+                    </td>
 
-    <td colspan="3">
+                    <td colspan="3">
 
-        <input type="password"
-               id="confirmPassword"
-               name="confirmPassword"
-               minlength="8"
-               maxlength="30"
-               title="Re-enter the same password."
-               oninput="validatePasswords()"
-               required>
+                        <input type="password"
+                               id="confirmPassword"
+                               name="confirmPassword"
+                               minlength="8"
+                               maxlength="30"
+                               placeholder="Confirm your password"
+                               autocomplete="new-password"
+                               title="Re-enter your password exactly as typed."
+                               aria-describedby="confirmPasswordError"
+                               required>
 
-        <span id="confirmPasswordError" class="error-message"></span>
+                        <span id="confirmPasswordError"
+                              class="error-message"
+                              aria-live="polite"></span>
 
-    </td>
+                    </td>
 
-</tr>
+                </tr>
+
+
+                <!-- FORM STATUS -->
+                <tr>
+
+                    <td colspan="6">
+
+                        <p id="formStatus"
+                           role="status"
+                           aria-live="polite">
+                            Complete the form, then click Validate.
+                        </p>
+
+                    </td>
+
+                </tr>
+
 
                 <!-- BUTTONS -->
                 <tr>
 
-                    <td colspan="6"
-                        class="button-row">
+                    <td colspan="6" class="button-row">
 
                         <input type="reset"
                                value="Reset"
                                class="clear-button">
 
-                        <input type="submit"
-                               value="Submit"
-                               class="submit-button">
+                        <button type="button"
+                                id="validateBtn"
+                                class="submit-button">
+                            Validate
+                        </button>
+
+                        <button type="submit"
+                                id="submitBtn"
+                                class="submit-button"
+                                hidden
+                                disabled>
+                            Submit
+                        </button>
 
                     </td>
 
@@ -639,6 +801,7 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
 
     </div>
 
+
     <!-- BOTTOM SECTION / FOOTER -->
     <div id="footer">
 
@@ -647,47 +810,50 @@ Description: Patient Registration Form for patients that are coming to Mare Skin
             <h3>Maré Skin Dermatology</h3>
 
             <p>
-                PO BOX 18881<br>
+                PO BOX 18881
                 Sugar Land, TX 77496
             </p>
 
         </div>
-
 
         <div>
 
             <button type="button"
                     class="contact-button"
                     onclick="alert('Please contact Maré Skin through the clinic office.')">
-
                 Contact Us
-
             </button>
 
         </div>
 
-
         <div class="footer-links">
 
             <a href="https://www.facebook.com/"
-               target="_blank">
+               target="_blank"
+               rel="noopener noreferrer">
                 Facebook
             </a>
 
             <a href="https://www.instagram.com/"
-               target="_blank">
+               target="_blank"
+               rel="noopener noreferrer">
                 Instagram
             </a>
 
             <a href="https://www.twitter.com/"
-               target="_blank">
+               target="_blank"
+               rel="noopener noreferrer">
                 X / Twitter
             </a>
 
         </div>
 
     </div>
-    
+
+</body>
+
+</html>
+
     <script>
         document.getElementById("today").innerHTML = new Date().toLocaleDateString();
     </script>
